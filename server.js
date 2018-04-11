@@ -29,9 +29,6 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname,'public')));
 
 app.use('/api', route);
-//testing server
-app.get('/', function(req, res){
-    res.send('in ur service');
-});
+
 
 app.listen(process.env.PORT || port,function(){console.log('server started at port '+port);});
