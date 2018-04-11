@@ -1,0 +1,44 @@
+
+
+<!--<div class="container">
+    <div class="row" *ngFor= "let foundContact of foundContacts">
+        {{foundContact}}
+        <div class="col-md-3">
+            {{foundContact.firstName}}
+        </div>
+        <div class="col-md-3">
+            {{foundContact.lastName}}
+        </div>
+        <div class="col-md-3">
+            {{foundContact.phone}}
+        </div>
+    </div>
+
+</div>-->
+<div class="container"  style="margin-top:50vh">
+    <form (submit)= "addSkill()">
+        <div class="form-group">
+            <label>Skill Name</label>
+            <input type="text" [(ngModel)]= "skillName" name="skillName" class="form-control" required>
+        </div>
+        
+        <div class="form-group">
+            <label>Status</label>
+            <input type="text" [(ngModel)]= "status" name="status" class="form-control" required>
+        </div>
+        <input type="submit" class="btn btn-success" value="Add">
+    </form>
+</div>
+<div class="container">
+    <div class="row" *ngFor= "let skill of skills">
+        <div class="col-md-3">
+            {{skill.skillName}}
+        </div>
+        <div class="col-md-3">
+            {{skill.status}}
+        </div>
+        <div class="col-md-3">
+            <input type="button" (click)="deleteSkill(skill._id)" value="Delete" class= "btn btn-danger" />
+        </div>
+    </div>
+</div>
