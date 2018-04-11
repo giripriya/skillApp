@@ -26,7 +26,9 @@ app.use(cors());
 
 app.use(bodyParser.json());
 
-app.use(express.static(path.join(__dirname,'public')));
+// Create link to Angular build directory
+var distDir = __dirname + "/dist/";
+app.use(express.static(distDir));
 
 app.use('/api', route);
 
