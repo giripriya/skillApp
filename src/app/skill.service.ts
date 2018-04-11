@@ -16,7 +16,7 @@ export class SkillService {
       
     deleteSkill(id)
       {
-            return this.http.delete(this.skillUrl+'/' || 'http://localhost:3000/api/skill/'+ id);
+            return this.http.delete(this.skillUrl+'/'+ id || 'http://localhost:3000/api/skill/'+ id);
       }
       
     addSkill(newSkill)
@@ -27,7 +27,7 @@ export class SkillService {
       }
     findSkill(query)
       {
-        return this.http.get(this.skillUrl+'/' || 'http://localhost:3000/api/skill/'+query).map(res=> res.json());
+        return this.http.get(this.skillUrl+'/'+query || 'http://localhost:3000/api/skill/'+query).map(res=> res.json());
       }
 }
 
