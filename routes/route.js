@@ -42,7 +42,7 @@ router.delete('/skill/:id',function(req, res , next){
 //find skill
 router.get('/skill/:query',function(req, res){
     const regex = new RegExp(escapeRegex(req.params.query), 'gi');
-    Skill.findAll({ "skillName": regex }, function(err, skill) {
+    Skill.findAll({ "skillName": regex }).then((err, skill)=> {
            if(err) {
                console.log(err);
            } else {
@@ -64,7 +64,17 @@ router.put('/skill/:id/:skillName',(req, res) => {
 
 // Update a skill identified by the Id in the request
 router.put('/skillStatus/:id/:skillName',(req, res) => {
-    Skill.update({ status: req.params.skillName },{where:{id:req.params.id}}, { new:true },function(err, result) {
+    Skill.update(
+        {
+            status: req.params.skillName
+        },
+        {
+            where:
+         {
+            id:req.params.id
+         }, 
+         returning:true})
+                 .then((err, result)=> {
            if(err) {
                console.log(err);
            } else {
