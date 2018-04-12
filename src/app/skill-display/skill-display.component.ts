@@ -13,7 +13,11 @@ import {InlineEditorModule} from '@qontu/ngx-inline-editor';
 })
 export class SkillDisplayComponent implements OnInit {
   skills: Skill[];
-  
+  hoveredSkill: Skill;
+
+  hoverSkill:(skill: Skill)=>{
+      this.hoveredSkill = skill;
+  };
 
   constructor( private skillService: SkillService) { }
 
