@@ -34,7 +34,7 @@ deleteSkill(id:any)
         
     });
     this.skillService.getSkills().then(skills=>{ 
-        this.skills = skills;
+        this.skills = skills.map();
         //this.skillService.getSkills().then(skills=> this.skills = skills);
     });
 }
