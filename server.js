@@ -11,6 +11,7 @@ const port = 3000;
 
 const route = require('./routes/route.js');
 
+const Skill = require('./modules/skill');
 
 //
 //mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/skilllist');
@@ -34,15 +35,7 @@ app.use(express.static(distDir));
 
 app.use('/api', route);
 
-const sequelize = new Sequelize(process.env.DATABASE_URL, {
-      dialect:  'postgres',
-      protocol: 'postgres',
-      port:     match[4],
-      host:     match[3],
-      logging:  true //false
-    });
-
-sequelize.sync().then(function() {
+Skill.sync().then(function() {
   http.createServer(app).listen(process.env.PORT, function(){
     console.log('Express server listening on port ' + process.env.PORT);
   });
