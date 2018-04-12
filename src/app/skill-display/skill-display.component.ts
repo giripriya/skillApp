@@ -19,7 +19,7 @@ export class SkillDisplayComponent implements OnInit {
 
   ngOnInit() {
       var skills= this.skills;
-      this.skillService.getSkills().subscribe((skills: Skill[])=>{
+      this.skillService.getSkills().then((skills: Skill[])=>{
                 this.skills= skills;
       });
   }
