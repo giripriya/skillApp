@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { SkillListComponent } from './skill-list/skill-list.component';
 import { SkillSearchComponent } from './skill-search/skill-search.component';
+import { SkillDisplayComponent } from './skill-display/skill-display.component';
 
 
 
@@ -13,10 +14,11 @@ import { SkillSearchComponent } from './skill-search/skill-search.component';
   declarations: [
     AppComponent,
     SkillListComponent,
-    SkillSearchComponent
+    SkillSearchComponent,
+    SkillDisplayComponent
   ],
   imports: [
-    BrowserModule, HttpModule, FormsModule
+    BrowserModule, HttpModule, FormsModule, InlineEditorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
