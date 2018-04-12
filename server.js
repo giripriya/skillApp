@@ -11,7 +11,7 @@ const port = 3000;
 
 const route = require('./routes/route.js');
 
-const Skill = require('./modules/skill');
+const Skill = require('./modules/skills');
 
 //
 //mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/skilllist');
