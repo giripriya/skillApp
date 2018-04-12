@@ -36,7 +36,10 @@ router.delete('/skill/:id',function(req, res , next){
           res.json(err);
       }else{
           res.json(result);
-      }}).destroy();
+      }});
+    Skill.destroy(
+        {where:{id : req.params.id}}
+    );
    });
 
 //find skill
