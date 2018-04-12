@@ -25,6 +25,6 @@ export class SkillSearchComponent implements OnInit {
     });
     }
       ngOnInit() {
-          this.skillService.getSkills().then(skillSearch=> this.skillSearch = skillSearch);
+          this.skillService.getSkillss().subscribe(skillSearch=> this.skillSearch = skillSearch);
       }
 }

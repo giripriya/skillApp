@@ -15,10 +15,10 @@ export class SkillService {
                  .then(response => response.json() as Skill[])
                  .catch(this.handleError);
     }
-//getSkills()
-//      {
-//          return this.http.get(this.skillUrl+'s' || 'http://localhost:3000/api/skills').map(res=> res.json());
-//      }
+getSkillss()
+      {
+          return this.http.get(this.skillUrl+'s' || 'http://localhost:3000/api/skills').map(res=> res.json());
+      }
       
     deleteSkill(id)
       {

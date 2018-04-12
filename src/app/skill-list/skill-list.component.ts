@@ -33,10 +33,9 @@ deleteSkill(id:any)
         }
         
     });
-    this.skillService.getSkills().then(skills=>{ 
-        this.skills = skills.map();
-        //this.skillService.getSkills().then(skills=> this.skills = skills);
-    });
+    this.skillService.getSkillss().subscribe(skills=>{ 
+        this.skills = skills;
+        this.skillService.getSkillss().subscribe(skills=> this.skills = skills);});
 }
 
 
@@ -48,11 +47,11 @@ addSkill()
     };
     this.skillService.addSkill(newSkill).subscribe(skill=>{
         this.skills.push(skill);
-        this.skillService.getSkills().then(skills=> this.skills = skills);
+        this.skillService.getSkillss().subscribe(skills=> this.skills = skills);
     });
 }
   ngOnInit() {
-      this.skillService.getSkills().then(skills=> this.skills = skills);
+      this.skillService.getSkillss().subscribe(skills=> this.skills = skills);
   }
 
 }
