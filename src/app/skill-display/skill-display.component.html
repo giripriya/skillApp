@@ -2,8 +2,8 @@
         <div *ngFor= "let Skill of skills"   class="col-sm-9 col-sm-offset-1  skillList"> 
             <div class="eachSkill" (mouseover)="hoverSkill(Skill)" (mouseleave)="hoverSkill('')">
                 <div [class.active]="Skill === hoveredSkill" class="col-sm-4 skillName">
-                    <inline-editor type="text"  (onSave)="updateSkill($event)" name="skillName" >{{Skill.skillName}}
-                    &nbsp;&nbsp;<span class="glyphicon glyphicon-pencil"></span></inline-editor></div>
+                    <inline-editor type="text" [(ngModel)]="Skill.skillName"  (onSave)="updateSkill($event)" name="skillName" >
+                    </inline-editor>&nbsp;&nbsp;<span class="glyphicon glyphicon-pencil"></span></div>
                 <div [ngStyle]="{'color' : Skill.status==='accept'? 'green': 'grey'}" class="approve col-sm-3 col-sm-offset-1 ">
                     <button type="submit">
                         <span  class="glyphicon glyphicon-ok"></span>&nbsp;&nbsp;{{Skill.status}}
