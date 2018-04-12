@@ -30,15 +30,14 @@ router.post('/skill',function(req, res , next){
 
 //delete skill
 router.delete('/skill/:id',function(req, res , next){
-   Skill.destroy({where:{id: req.params.id}})
-                 .then((err, result)=>{
-      if(err){
+    
+    var skill = Skill.findOne({where:{id : req.params.id}}).then((err, result)=>{
+        if(err){
           res.json(err);
       }else{
           res.json(result);
-      }
+      }}).destroy();
    });
-});
 
 //find skill
 router.get('/skill/:query',function(req, res){
