@@ -54,12 +54,12 @@ button{
     padding: 0px;
     margin-bottom: 5vh;
 }
-skillName > span.glyphicon .glyphicon-pencil
+.skillName .glyphicon .glyphicon-pencil
 {
     visibility: hidden;
     transition: .4s ease;
 }
-skillName > span.glyphicon .glyphicon-pencil .active
+.skillName .glyphicon .glyphicon-pencil .active
 {
     visibility: visible;
     transition: .4s ease;
