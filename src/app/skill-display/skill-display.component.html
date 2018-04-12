@@ -1,18 +1,18 @@
 <div *ngIf="skills" class="container">
-        <div *ngFor= "let Skill of skills" class="col-sm-9 col-sm-offset-1  skillList"> 
+        <div *ngFor= "let Skill of skills" (mouseover)="hoverSkill(Skill)" (mouseleave)="hoverSkill('')"  class="col-sm-9 col-sm-offset-1  skillList"> 
             <div class="eachSkill">
                 <div class="col-sm-4 skillName">
-                    <inline-editor type="text" [(ngModel)]="Skill.skillName" (onSave)="updateSkill($event)" name="skillName" ></inline-editor>
-                    &nbsp;&nbsp;<span (mouseover)="hoverSkill(Skill)" (mouseleave)="hoverSkill('')"
-        [class.active]="Skill === hoveredSkill" class="glyphicon glyphicon-pencil"></span></div>
-                <div class="approve col-sm-3 col-sm-offset-1 ">
+                    <inline-editor type="text" [(ngModel)]="Skill.skillName" (onSave)="updateSkill($event)" name="skillName" >
+                    &nbsp;&nbsp;<span 
+        [class.active]="Skill === hoveredSkill" class="glyphicon glyphicon-pencil"></span></inline-editor></div>
+                <div [ngStyle]="{'color' : Skill.status==='accept'? 'green': 'grey'}" class="approve col-sm-3 col-sm-offset-1 ">
                     <button type="submit">
-                        <span [ngStyle]="{'color' : Skill.status==='accept'? 'green': 'grey'}" class="glyphicon glyphicon-ok"></span>&nbsp;&nbsp;{{Skill.status}}
+                        <span  class="glyphicon glyphicon-ok"></span>&nbsp;&nbsp;{{Skill.status}}
                     </button>  
                 </div>
-                <div class="reject col-sm-3 col-sm-offset-1">
+                <div [ngStyle]="{'color' : Skill.status==='reject'? 'red': 'grey'}" class="reject col-sm-3 col-sm-offset-1">
                     <button type="submit">
-                        <span [ngStyle]="{'color' : Skill.status==='reject'? 'red': 'grey'}" class="glyphicon glyphicon-remove"></span>&nbsp;&nbsp;{{Skill.status}}
+                        <span  class="glyphicon glyphicon-remove"></span>&nbsp;&nbsp;{{Skill.status}}
                     </button>  
                 </div>
             </div>
