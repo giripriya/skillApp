@@ -4,6 +4,7 @@ var Sequelize = require('sequelize');
 var bodyParser = require('body-parser');
 var cors = require('cors');
 var path = require('path');
+var http = require('http');
 
 var app = express();
 
