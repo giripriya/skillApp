@@ -4,10 +4,8 @@ const Skill = require('../modules/skills');
 
 // retrieve data
 router.get('/skills', function(req, res, next){ 
-    Skill.findAll({}).then(skills => res.json({
-            error: false,
-            data: skills
-        }))
+    Skill.findAll({}).then(skills => res.json(
+            data: skills))
         .catch(error => res.json({
             error: true,
             data: [],
