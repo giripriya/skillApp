@@ -19,7 +19,7 @@ getSkillss()
       {
           return this.http.get(this.skillUrl+'s' || 'http://localhost:3000/api/skills').map(res=> res.json());
       }
-      
+       
     deleteSkill(id)
       {
             return this.http.delete(this.skillUrl+'/'+ id || 'http://localhost:3000/api/skill/'+ id);
