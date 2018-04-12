@@ -30,7 +30,8 @@ router.post('/skill',function(req, res , next){
 
 //delete skill
 router.delete('/skill/:id',function(req, res , next){
-   Skill.destroy({_id: req.params.id},function(err, result){
+   Skill.destroy({where:{id: req.params.id}})
+                 .then((err, result)=>{
       if(err){
           res.json(err);
       }else{
