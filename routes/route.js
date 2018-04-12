@@ -4,7 +4,7 @@ const Skill = require('../modules/skills');
 
 // retrieve data
 router.get('/skills', function(req, res, next){ 
-    Skill.find(function(err,skills){
+    Skill.findAll(function(err,skills){
         res.send(skills);
     });
 });
@@ -26,7 +26,7 @@ router.post('/skill',function(req, res , next){
 
 //delete skill
 router.delete('/skill/:id',function(req, res , next){
-   Skill.remove({_id: req.params.id},function(err, result){
+   Skill.destroy({_id: req.params.id},function(err, result){
       if(err){
           res.json(err);
       }else{
@@ -38,7 +38,7 @@ router.delete('/skill/:id',function(req, res , next){
 //find skill
 router.get('/skill/:query',function(req, res){
     const regex = new RegExp(escapeRegex(req.params.query), 'gi');
-    Skill.find({ "skillName": regex }, function(err, skill) {
+    Skill.findAll({ "skillName": regex }, function(err, skill) {
            if(err) {
                console.log(err);
            } else {
@@ -48,7 +48,7 @@ router.get('/skill/:query',function(req, res){
 });
 // Update a skill identified by the Id in the request
 router.put('/skill/:id/:skillName',(req, res) => {
-    Skill.findByIdAndUpdate(req.params.id, { skillName: req.params.skillName },{ new:true },function(err, result) {
+    Skill.update({ skillName: req.params.skillName },{where:{id:req.params.id}}, { new:true },function(err, result) {
            if(err) {
                console.log(err);
            } else {
@@ -60,7 +60,7 @@ router.put('/skill/:id/:skillName',(req, res) => {
 
 // Update a skill identified by the Id in the request
 router.put('/skillStatus/:id/:skillName',(req, res) => {
-    Skill.findByIdAndUpdate(req.params.id, { lastName: req.params.skillName },{ new:true },function(err, result) {
+    Skill.update({ status: req.params.skillName },{where:{id:req.params.id}}, { new:true },function(err, result) {
            if(err) {
                console.log(err);
            } else {

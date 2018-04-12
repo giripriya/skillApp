@@ -1,7 +1,7 @@
-const mongoose = require('mongoose');
+const sequelize = require('sequelize');
 
 
-const SkillSchema = mongoose.Schema({
+const SkillSchema = sequelize.schema({
    skillName :{
        type: String,
        required : true
@@ -12,4 +12,4 @@ const SkillSchema = mongoose.Schema({
     }
 });
 
-const Skill = module.exports= mongoose.model('Skill', SkillSchema);
+const Skill = module.exports= sequelize.model('Skill', SkillSchema);
