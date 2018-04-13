@@ -28,8 +28,8 @@ private getIndexOfSkill = (skillId: String) => {
 addSkill()
  {
      var toAddSkills = this.toAddSkills;
+     var id = toAddSkills?toAddSkills.length().toString:"0";
      var skill : Skill={
-        id: toAddSkills.length.toString()|| "0",
         skillName : "Skill Name",
         status : "notAdded"
      };
