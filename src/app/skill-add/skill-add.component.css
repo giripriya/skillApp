@@ -67,3 +67,13 @@ div.skillName.active > span.glyphicon.glyphicon-pencil
 {
     display: none;
 }
+.name
+{
+    font-size: 20px;
+    padding: 9px 15px;
+}
+.btn.btn-success{
+    padding: 4px 27px;
+    font-size: 18px;
+    border-radius: 0px;
+}

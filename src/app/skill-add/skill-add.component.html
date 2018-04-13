@@ -1,7 +1,7 @@
 <div class="container">
 <div class="skillHeader col-sm-9 col-lg-offset-1">
-            <div class="name col-lg-4">Name</div>
-            <div class="col-lg-offset-5 col-lg-3"><button type="submit" (click)="addSkill()" class="btn btn-success">  Add  </button></div>
+            <div class="name col-lg-9">Name</div>
+            <div class=" col-lg-3"><button type="submit" (click)="addSkill()" class="btn pull-right btn-success">  Add  </button></div>
  
 </div>
 </div>
@@ -15,7 +15,7 @@
                     </inline-editor><span [hidden]="flag" class="col-sm-3 glyphicon glyphicon-pencil"></span>
                 </div>
                 <div [ngStyle]="{'color' : 'green'}" (click)="addSkillG(Skill)" class="approve col-sm-3 col-sm-offset-1 ">
-                    <button type="submit">
+                    <button type="submit" >
                         <span  class="glyphicon glyphicon-ok"></span>&nbsp;&nbsp;Approve
                     </button>  
                 </div>
