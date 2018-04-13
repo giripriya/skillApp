@@ -10,7 +10,7 @@
 	<div class="container">
         <div  class="col-sm-9 col-sm-offset-1 searchContainer">
             <div id="imaginary_container"> 
-                <form (submit)="findSkill(query)"  class="input-group stylish-input-group">
+                <form autocomplete="off" (submit)="findSkill(query)"  class="input-group stylish-input-group">
                     <input type="text" (focus)="showDrop()" (blur)="hideDrop()" (keyup)="findSkill(query)" [(ngModel)]= "query" name="search" class="form-control"  placeholder="Search" >
                     <span class="input-group-addon">
                         <button (focus)="showDrop()" (blur)="hideDrop()" type="submit">
