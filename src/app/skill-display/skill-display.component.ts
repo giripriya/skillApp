@@ -21,7 +21,7 @@ export class SkillDisplayComponent implements OnInit {
     }
   updateSkill(evt : Event)
     {
-        updateFlag();
+        this.updateFlag();
         console.log(evt);
     }
   updateFlag() 
