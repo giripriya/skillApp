@@ -17,10 +17,13 @@ export class SkillSearchComponent implements OnInit {
     show: Boolean;
   constructor(private skillService: SkillService) { }
 
-    log()
+    hideDrop()
     {
-        console.log('out');
-        this.show = !this.show;
+        this.show = false;
+    }
+    showDrop()
+    {
+        this.show = true;
     }
 
     findSkill(query:any)
