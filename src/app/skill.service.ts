@@ -23,6 +23,14 @@ export class SkillService {
                  .then(response => response.json() as Skill)
                  .catch(this.handleError);
     }
+    updateSkillStat(putSkill: Skill): Promise<void | Skill> {
+        console.log(putSkill);
+      var putUrl = this.skillUrl + 'Status/' + putSkill.id+ '/' + putSkill.status;
+      return this.http.put(putUrl, putSkill.status)
+                 .toPromise()
+                 .then(response => response.json() as Skill)
+                 .catch(this.handleError);
+    }
 
 
 getSkillss()

@@ -24,7 +24,7 @@ export class SkillDisplayComponent implements OnInit {
     
     updateSkillStatus(skill: Skill, stat: String):void{
         skill.status=(skill.status===stat)?'':stat;
-        this.skillService.updateSkill(skill).then((updatedSkill: Skill) => {
+        this.skillService.updateSkillStat(skill).then((updatedSkill: Skill) => {
       this.updateSkillL(updatedSkill);
     });
     }
