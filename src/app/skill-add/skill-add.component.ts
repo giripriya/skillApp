@@ -12,7 +12,7 @@ import { NgStyle } from '@angular/common';
 })
 export class SkillAddComponent implements OnInit {
     
-@Input:
+@Input
 Skills: Skill[];
  hoveredSkill: Skill;
  flag: Boolean = false;
@@ -23,6 +23,7 @@ addSkill()
  {
      var toAddSkills = this.toAddSkills;
      var skill : Skill={
+        id: toAddSkills.length.toString(),
         skillName : "Skill Name",
         status : "notAdded"
      };
@@ -30,10 +31,18 @@ addSkill()
  }
  addSkillG(skill: Skill)
  {
-     this.skillService.addSkill(skill).then(result:Skill=>{
+     delete skill.id;
+     this.skillService.addSkill(skill).then((result:Skill)=>{
          Skills.push(result);
      });
  }
+updateSkill = (skill: Skill) => {
+    var idx = this.getIndexOfSkill(skill.id);
+    if (idx !== -1) {
+      this.toAddSkills[idx] = skill;
+    }
+    return this.toAddSkills;
+    }
   hoverSkill(skill: Skill)
     {
       this.hoveredSkill = skill;
