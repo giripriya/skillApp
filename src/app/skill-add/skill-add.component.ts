@@ -12,13 +12,19 @@ import { NgStyle } from '@angular/common';
 })
 export class SkillAddComponent implements OnInit {
     
-@Input
+@Input()
 Skills: Skill[];
+
  hoveredSkill: Skill;
  flag: Boolean = false;
 toAddSkills: Skill[];
  
   constructor(private skillService: SkillService) { }
+private getIndexOfSkill = (skillId: String) => {
+    return this.skills.findIndex((skill) => {
+      return skill.id === skillId;
+    });
+    }
 addSkill()
  {
      var toAddSkills = this.toAddSkills;
@@ -32,6 +38,7 @@ addSkill()
  addSkillG(skill: Skill)
  {
      delete skill.id;
+     var Skills = this.Skills;
      this.skillService.addSkill(skill).then((result:Skill)=>{
          Skills.push(result);
      });

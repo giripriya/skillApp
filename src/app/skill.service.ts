@@ -45,7 +45,10 @@ getSkillss()
       {
             var headers = new Headers();
             headers.append('Content-Type','application/json');
-            return this.http.post(this.skillUrl+'/' ||'http://localhost:3000/api/skill/',newSkill ,{headers:headers}).map(res=>res.json());
+            return this.http.post(this.skillUrl+'/' ||'http://localhost:3000/api/skill/',newSkill ,{headers:headers})
+                    .toPromise()
+                     .then(response => response.json() as Skill)
+                     .catch(this.handleError);
       }
     findSkill(query)
       {
