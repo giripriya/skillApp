@@ -1,9 +1,9 @@
 <div *ngIf="skills" class="container">
         <div *ngFor= "let Skill of skills"   class="col-sm-9 col-sm-offset-1  skillList"  (mouseover)="hoverSkill(Skill)" (mouseleave)="hoverSkill('')"> 
             <div class="eachSkill">
-                <div [class.active]="Skill === hoveredSkill" class="col-sm-4 container skillName">
+                <div [class.active]="Skill === hoveredSkill" (click) ="updateFlag()" class="col-sm-4 container skillName">
                     <inline-editor class="col-sm-9" type="text" [(ngModel)]="Skill.skillName"  (onSave)="updateSkill($event)" name="skillName" >
-                    </inline-editor><span class="col-sm-3 glyphicon glyphicon-pencil"></span></div>
+                    </inline-editor><span *ngHide="flag" class="col-sm-3 glyphicon glyphicon-pencil"></span></div>
                 <div [ngStyle]="{'color' : Skill.status==='accept'? 'green': 'grey'}" class="approve col-sm-3 col-sm-offset-1 ">
                     <button type="submit">
                         <span  class="glyphicon glyphicon-ok"></span>&nbsp;&nbsp;{{Skill.status}}
