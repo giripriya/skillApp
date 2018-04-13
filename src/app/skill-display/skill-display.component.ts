@@ -27,7 +27,7 @@ export class SkillDisplayComponent implements OnInit {
         console.log(evt);
         console.log(skill);
     this.skillService.updateSkill(skill).then((updatedSkill: Skill) => {
-        console.log(updatedSkillL)
+        console.log(updatedSkill)
       this.updateSkillL(updatedSkill);
     });
     }
