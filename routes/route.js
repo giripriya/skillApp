@@ -66,12 +66,8 @@ router.put('/skill/:id/:skillName',(req, res) => {
          }, 
          returning:true,
         plain : true})
-                 .then((err, result)=> {
-           if(err) {
-               console.log(err);
-           } else {
+                 .then((result)=> {
               res.json(result[1].dataValues);
-           }
        });
 }
 );
