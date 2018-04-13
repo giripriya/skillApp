@@ -18,11 +18,13 @@ export class SkillDisplayComponent implements OnInit {
 
     private getIndexOfSkill = (skillId: String) => {
     return this.skills.findIndex((skill) => {
-      return skill.id === skilltId;
+      return skill._id === skillId;
     });
     }
     
-    updateSkill(skill: Skill): void {
+    updateSkill(evt : Event, skill: Skill): void {
+    this.updateFlag(null);
+        console.log(evt);
     this.skillService.updateSkill(skill).then((updatedSkill: Skill) => {
       this.updateSkillL(updatedSkill);
     });
@@ -30,7 +32,7 @@ export class SkillDisplayComponent implements OnInit {
     
     
     updateSkillL = (skill: Skill) => {
-    var idx = this.getIndexOfSkill(skill.id);
+    var idx = this.getIndexOfSkill(skill._id);
     if (idx !== -1) {
       this.skills[idx] = skill;
     }
@@ -40,12 +42,6 @@ export class SkillDisplayComponent implements OnInit {
   hoverSkill(skill: Skill)
     {
       this.hoveredSkill = skill;
-    }
-  updateSkill(evt : Event)
-    {
-        this.updateFlag(null);
-        console.log(evt);
-        
     }
   updateFlag(evt : Event) 
     {
