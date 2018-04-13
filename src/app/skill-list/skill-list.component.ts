@@ -25,7 +25,7 @@ deleteSkill(id:any)
         {
             for(var i=0;i< skills.length;i++)
                 {
-                    if(skills[i]._id== id)
+                    if(skills[i].id== id)
                         {
                             skills.splice(i,1);
                         }
