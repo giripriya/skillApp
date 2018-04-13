@@ -53,7 +53,7 @@ getSkillss()
       }
     findSkill(query)
       {
-        return this.http.get(this.skillUrl+'/'+query || 'http://localhost:3000/api/skill/'+query).map(res=> res.json());
+        return this.http.get(this.skillUrl+'/'+query || 'http://localhost:3000/api/skill/'+query).toPromise().then(res=> res.json()).catch(this.handleError);
       }
     private handleError (error: any) {
       let errMsg = (error.message) ? error.message :
