@@ -17,7 +17,7 @@ export class SkillService {
     }
     updateSkill(putSkill: Skill): Promise<void | Skill> {
         console.log(putSkill);
-      var putUrl = this.skillUrl + '/' + putSkill._id+ '/';
+      var putUrl = this.skillUrl + '/' + putSkill.id+ '/';
       return this.http.put(putUrl, putSkill.skillName)
                  .toPromise()
                  .then(response => response.json() as Skill)

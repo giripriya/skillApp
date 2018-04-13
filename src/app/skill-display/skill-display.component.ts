@@ -18,7 +18,7 @@ export class SkillDisplayComponent implements OnInit {
 
     private getIndexOfSkill = (skillId: String) => {
     return this.skills.findIndex((skill) => {
-      return skill._id === skillId;
+      return skill.id === skillId;
     });
     }
     
@@ -34,7 +34,7 @@ export class SkillDisplayComponent implements OnInit {
     
     
     updateSkillL = (skill: Skill) => {
-    var idx = this.getIndexOfSkill(skill._id);
+    var idx = this.getIndexOfSkill(skill.id);
     if (idx !== -1) {
       this.skills[idx] = skill;
     }
