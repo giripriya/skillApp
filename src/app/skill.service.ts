@@ -43,6 +43,7 @@ getSkillss()
       
     addSkill(newSkill)
       {
+            console.log(newSKill);
             var headers = new Headers();
             headers.append('Content-Type','application/json');
             return this.http.post(this.skillUrl+'/' ||'http://localhost:3000/api/skill/',newSkill ,{headers:headers})
