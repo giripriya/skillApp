@@ -10,7 +10,7 @@
 	<div class="container">
         <div  class="col-sm-9 col-sm-offset-1 searchContainer">
             <div id="imaginary_container"> 
-                <form (focus)="show=true" (blur)="show=false" (submit)="findSkill(query)"  class="input-group stylish-input-group">
+                <form (focus)="" (blur)="log()" (submit)="findSkill(query)"  class="input-group stylish-input-group">
                     <input type="text"  [(ngModel)]= "query" name="search" class="form-control"  placeholder="Search" >
                     <span class="input-group-addon">
                         <button type="submit">
@@ -19,7 +19,7 @@
                     </span>
                 </form>
             </div>
-    <div [hidden]="show" class="col-sm-12" style="padding: 0px;position: absolute; z-index: 2;">
+    <div class="col-sm-12" style="padding: 0px;position: absolute; z-index: 2;">
         <div *ngFor= "let foundSkill of skillSearch" class="skillList"> 
             <div class="eachSkill">
                 <div class="col-lg-6 skillName">{{foundSkill.skillName}}</div>

@@ -16,6 +16,10 @@ export class SkillSearchComponent implements OnInit {
     status: string;
   constructor(private skillService: SkillService) { }
 
+    log()
+    {
+        console.log('out');
+    }
 
     findSkill(query:any)
     {
