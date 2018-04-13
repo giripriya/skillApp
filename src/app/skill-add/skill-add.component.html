@@ -1,5 +1,5 @@
 <div class="container">
-<div class="skillHeader col-sm-9 col-lg-offset-1">
+<div class="skillHeader col-lg-9 col-lg-offset-1">
             <div class="name col-lg-9">Name</div>
             <div class=" col-lg-3"><button type="submit" (click)="addSkill()" class="btn pull-right btn-success">  Add  </button></div>
  
@@ -8,7 +8,7 @@
 
 
 <div *ngIf="toAddSkills" class="container">
-        <div *ngFor="let Skill of toAddSkills" class="col-sm-9 col-sm-offset-1  skillList"  (mouseover)="hoverSkill(Skill)" (mouseleave)="hoverSkill('')"> 
+        <div *ngFor="let Skill of toAddSkills" class="col-lg-9 col-lg-offset-1  skillList"  (mouseover)="hoverSkill(Skill)" (mouseleave)="hoverSkill('')"> 
             <div class="eachSkill">
                 <div [class.active]="Skill === hoveredSkill"  class="col-lg-8 container skillName">
                     <inline-editor class="" type="text" (onCancel)="updateFlag()" (onFocus) ="updateFlag()" [(ngModel)]="Skill.skillName"  (onSave)="updateSkill($event,Skill)" name="skillName" >
