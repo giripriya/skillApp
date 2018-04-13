@@ -19,11 +19,11 @@ router.post('/skill',function(req, res , next){
         status: req.body.status
     });
     newSkill.save()
-        .then((err, skill) =>{
-        if(err){
-            res.json({msg: err});
+        .then((result) =>{
+        if(result){
+            res.json(result);
         }else{
-            res.json({msg: "added"});
+            res.json({msg: "notaADdded"});
         }
     })
 });

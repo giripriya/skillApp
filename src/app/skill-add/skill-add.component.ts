@@ -47,9 +47,8 @@ addSkill()
      delete skill.id;
      var Skills = this.Skills;
      this.skillService.addSkill(skill).then((result:Skill)=>{
-         console.log(result);
+         Skills.push(result);
      });
-     
  }
 updateSkill = (skill: Skill) => {
     var idx = this.getIndexOfSkill(skill.id);
