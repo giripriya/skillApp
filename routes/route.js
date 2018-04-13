@@ -45,7 +45,8 @@ router.delete('/skill/:id',function(req, res , next){
 //find skill
 router.get('/skill/:query',function(req, res){
     const regex = new RegExp(escapeRegex(req.params.query), 'gi');
-    Skill.findAll({where:{ "skillName": regex }}).then(skills => res.json(skills))
+    console.log(regex);
+    Skill.findAll({where:{ "skillName": regex }}).then(skills => {res.json(skills)})
         .catch(error => res.json({
             error: true,
             data: [],
