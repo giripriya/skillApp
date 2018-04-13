@@ -37,6 +37,13 @@ addSkill()
  }
  addSkillG(skill: Skill)
  {
+     for(var i=0; i< this.toAddSkills.length; i++)
+                {
+                    if(this.toAddSkills[i].id== skill.id)
+                        {
+                            this.toAddSkills.splice(i,1);
+                        }
+                }
      delete skill.id;
      var Skills = this.Skills;
      this.skillService.addSkill(skill).then((result:Skill)=>{
