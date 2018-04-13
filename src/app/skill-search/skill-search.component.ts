@@ -14,11 +14,13 @@ export class SkillSearchComponent implements OnInit {
     foundSkill: Skill;
     skillName: String;
     status: string;
+    show: Boolean;
   constructor(private skillService: SkillService) { }
 
     log()
     {
         console.log('out');
+        this.show = !this.show;
     }
 
     findSkill(query:any)
