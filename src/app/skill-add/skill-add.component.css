@@ -1,0 +1,69 @@
+#imaginary_container{
+    margin-top:10%; /* Don't copy this */
+}
+.stylish-input-group{
+    background: white !important; 
+    
+}
+.input-group-addon{
+    background-color: deepskyblue !important;
+    border-radius: 0px;
+}
+.stylish-input-group .form-control{
+	border-right:0; 
+	box-shadow:0 0 0; 
+	border-color:#ccc;
+    border-radius: 0;
+    height: 7vh;
+}
+.stylish-input-group button{
+    border:0;
+    background:transparent;
+}
+.navbar{
+  height: 7vh;
+  background-color: white;
+  border: 2px solid grey;
+  }
+.navbar-brand{
+    font-size: 20px;
+}
+button{
+    background-color: none;
+}
+.eachskill{
+    background-color: white;
+}
+.approve>button, .reject>button{
+    background-color: white !important;
+    border: none;
+}
+.skillList{
+    background-color: white;
+    height: 6vh;
+    min-height: 45px;
+    padding: 10px;
+    font-size: 16px;
+    color: #c2c2c3;
+    border-bottom: 1px solid #c2c2c3;
+}
+.skillName .glyphicon, .approve .glyphicon, .reject .glyphicon{
+    font-size: 12px;
+}
+.searchContainer{
+    padding: 0px;
+    margin-bottom: 5vh;
+}
+.glyphicon.glyphicon-pencil
+{
+    visibility: hidden;
+    transition: all .4s ease;
+}
+div.skillName.active > span.glyphicon.glyphicon-pencil 
+{
+    visibility: visible;
+}
+[hidden]
+{
+    display: none;
+}

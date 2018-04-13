@@ -16,7 +16,6 @@ export class SkillService {
                  .catch(this.handleError);
     }
     updateSkill(putSkill: Skill): Promise<void | Skill> {
-        console.log(putSkill);
       var putUrl = this.skillUrl + '/' + putSkill.id+ '/' + putSkill.skillName;
       return this.http.put(putUrl, putSkill.skillName)
                  .toPromise()
@@ -24,7 +23,6 @@ export class SkillService {
                  .catch(this.handleError);
     }
     updateSkillStat(putSkill: Skill): Promise<void | Skill> {
-        console.log(putSkill);
       var putUrl = this.skillUrl + 'Status/' + putSkill.id+ '/' + putSkill.status;
       return this.http.put(putUrl, putSkill.status)
                  .toPromise()

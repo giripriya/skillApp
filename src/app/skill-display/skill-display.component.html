@@ -1,8 +1,7 @@
+<app-skill-add
+               [Skills]="skills">
+</app-skill-add>
 <div *ngIf="skills" class="container">
-        <div class="skillHeader col-sm-9 col-lg-offset-1">
-            <div class="name col-lg-4">Name</div>
-            <div class="col-lg-offset-5 col-lg-3"><button type="submit" (click)="showInp()" class="btn btn-success">Add</button></div>
-        </div>
         <div *ngFor= "let Skill of skills"   class="col-sm-9 col-sm-offset-1  skillList"  (mouseover)="hoverSkill(Skill)" (mouseleave)="hoverSkill('')"> 
             <div class="eachSkill">
                 <div [class.active]="Skill === hoveredSkill"  class="col-sm-4 container skillName">
@@ -19,7 +18,6 @@
                         <span  class="glyphicon glyphicon-remove"></span>&nbsp;&nbsp;Reject
                     </button>  
                 </div>
-            </div>
-                
+            </div>     
         </div>
 	</div>

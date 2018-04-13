@@ -8,6 +8,8 @@ import { SkillSearchComponent } from './skill-search/skill-search.component';
 import { SkillDisplayComponent } from './skill-display/skill-display.component';
 import {InlineEditorModule} from '@qontu/ngx-inline-editor';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { SkillComponent } from './skill/skill.component';
+import { SkillAddComponent } from './skill-add/skill-add.component';
 
 
 
@@ -16,7 +18,9 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     AppComponent,
     SkillListComponent,
     SkillSearchComponent,
-    SkillDisplayComponent
+    SkillDisplayComponent,
+    SkillComponent,
+    SkillAddComponent
   ],
   imports: [
     BrowserModule, HttpModule, FormsModule, InlineEditorModule, AngularFontAwesomeModule
