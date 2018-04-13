@@ -20,7 +20,7 @@ export class SkillSearchComponent implements OnInit {
     findSkill(query:any)
     {
         var skillSearch = this.skillSearch;
-        this.skillService.findSkill(query).then(foundSkill=>{
+        this.skillService.findSkill(query).subscribe(foundSkill=>{
             this.skillSearch = foundSkill;
     });
     }
