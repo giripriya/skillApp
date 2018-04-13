@@ -15,6 +15,28 @@ export class SkillDisplayComponent implements OnInit {
   skills: Skill[];
   hoveredSkill: Skill;
   flag: Boolean = false;
+
+    private getIndexOfSkill = (skillId: String) => {
+    return this.skills.findIndex((skill) => {
+      return skill.id === skilltId;
+    });
+    }
+    
+    updateSkill(skill: Skill): void {
+    this.skillService.updateSkill(skill).then((updatedSkill: Skill) => {
+      this.updateSkillL(updatedSkill);
+    });
+    }
+    
+    
+    updateSkillL = (skill: Skill) => {
+    var idx = this.getIndexOfSkill(skill.id);
+    if (idx !== -1) {
+      this.skills[idx] = skill;
+    }
+    return this.skills;
+    }
+    
   hoverSkill(skill: Skill)
     {
       this.hoveredSkill = skill;
@@ -23,6 +45,7 @@ export class SkillDisplayComponent implements OnInit {
     {
         this.updateFlag(null);
         console.log(evt);
+        
     }
   updateFlag(evt : Event) 
     {
