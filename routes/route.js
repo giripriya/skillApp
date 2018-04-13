@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Skill = require('../modules/skills');
-
+var Sequelize = require('sequelize');
 // retrieve data
 router.get('/skills', function(req, res, next){ 
     Skill.findAll({}).then(skills => res.json(skills))
@@ -44,10 +44,7 @@ router.delete('/skill/:id',function(req, res , next){
 
 //find skill
 router.get('/skill/:query',function(req, res){
-    console.log(req.params.query);
-    const regex = new RegExp(escapeRegex(req.params.query), 'gi');
-    console.log(regex);
-    Skill.findAll({where:{ "skillName": regex }}).then(skills => {res.json(skills)})
+    Skill.findAll({where:{ "skillName": {[Sequelize.Op.like] : '%'+req.params.query+'%' }}}).then(skills => {res.json(skills)})
         .catch(error => res.json({
             error: true,
             data: [],
