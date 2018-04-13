@@ -19,11 +19,8 @@
                     </span>
                 </form>
             </div>
-        </div>
-	</div>
-    
-    <div class="container">
-        <div *ngFor= "let foundSkill of skillSearch" class="col-sm-9 col-sm-offset-1  skillList"> 
+            <div class="col-sm-12">
+        <div *ngFor= "let foundSkill of skillSearch" class="skillList"> 
             <div class="eachSkill">
                 <div class="col-sm-4 skillName">{{foundSkill.skillName}}&nbsp;&nbsp;<span  class="glyphicon glyphicon-pencil"></span></div>
                 <div class="approve col-sm-3 col-sm-offset-1 ">
@@ -40,3 +37,7 @@
                 
         </div>
 	</div> 
+        </div>
+	</div>
+    
+    
