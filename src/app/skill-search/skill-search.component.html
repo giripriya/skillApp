@@ -8,7 +8,7 @@
         </div>
     </nav>
 	<div class="container">
-        <div  class="col-lg-9 col-lg-offset-1 searchContainer">
+        <div  class="col-lg-9 col-sm-10 col-sm-offset-1 col-lg-offset-1 searchContainer">
             <div id="imaginary_container"> 
                 <form autocomplete="off" (submit)="findSkill(query)"  class="input-group stylish-input-group">
                     <input type="text" (focus)="showDrop()" (blur)="hideDrop()" (keyup)="findSkill(query)" [(ngModel)]= "query" name="search" class="form-control"  placeholder="Search" >
@@ -19,16 +19,16 @@
                     </span>
                 </form>
             </div>
-    <div [hidden]="!show" class="col-lg-12" style="padding: 0px;position: absolute; z-index: 2;">
+    <div [hidden]="!show" class="col-lg-12 col-sm-12" style="padding: 0px;position: absolute; z-index: 2;">
         <div *ngFor= "let foundSkill of skillSearch" class="skillList"> 
             <div class="eachSkill">
-                <div class="col-lg-6 skillName">{{foundSkill.skillName}}</div>
-                <div *ngIf="foundSkill.status==='Accept'" style="color:green" class="approve col-lg-3 col-lg-offset-1 ">
+                <div class="col-lg-6 col-sm-8 skillName">{{foundSkill.skillName}}</div>
+                <div *ngIf="foundSkill.status==='Accept'" style="color:green" class="approve col-sm-4 col-lg-3 col-lg-offset-1 ">
                     <button type="submit">
                         <span class="glyphicon glyphicon-ok"></span>&nbsp;&nbsp;{{foundSkill.status}}
                     </button>  
                 </div>
-                <div *ngIf="foundSkill.status==='Reject'" ngStyle="{'color':'red'}"class="reject col-lg-3 col-lg-offset-1">
+                <div *ngIf="foundSkill.status==='Reject'" ngStyle="{'color':'red'}"class="reject col-sm-4 col-lg-3 col-lg-offset-1">
                     <button type="submit">
                         <span class="glyphicon glyphicon-remove"></span>&nbsp;&nbsp;{{foundSkill.status}}
                     </button>  

@@ -1,20 +1,20 @@
 <div class="container">
-<div class="skillHeader col-lg-9 col-lg-offset-1">
-            <div class="name col-lg-9">Name</div>
-            <div class=" col-lg-3"><button type="submit" (click)="addSkill()" class="btn pull-right btn-success">  Add  </button></div>
+<div class="skillHeader col-lg-9 col-sm-10 col-sm-offset-1 col-lg-offset-1">
+            <div class="name col-lg-9 col-sm-8">Name</div>
+            <div class=" col-lg-3 col-sm-4"><button type="submit" (click)="addSkill()" class="btn pull-right btn-success">  Add  </button></div>
  
 </div>
 </div>
 
 
 <div *ngIf="toAddSkills" class="container">
-        <div *ngFor="let Skill of toAddSkills" class="col-lg-9 col-lg-offset-1  skillList"  (mouseover)="hoverSkill(Skill)" (mouseleave)="hoverSkill('')"> 
+        <div *ngFor="let Skill of toAddSkills" class="col-lg-9 col-sm-10 col-sm-offset-1 col-lg-offset-1 skillList"  (mouseover)="hoverSkill(Skill)" (mouseleave)="hoverSkill('')"> 
             <div class="eachSkill">
-                <div [class.active]="Skill === hoveredSkill"  class="col-lg-8 container skillName">
+                <div [class.active]="Skill === hoveredSkill"  class="col-lg-8 col-sm-8 container skillName">
                     <inline-editor class="" type="text" (onCancel)="updateFlag()" (onFocus) ="updateFlag()" [(ngModel)]="Skill.skillName"  (onSave)="updateSkill($event,Skill)" name="skillName" >
                     </inline-editor><span [hidden]="flag" class=" glyphicon glyphicon-pencil"></span>
                 </div>
-                <div [ngStyle]="{'color' : 'green'}" (click)="addSkillG(Skill)" class="approve col-lg-12">
+                <div [ngStyle]="{'color' : 'green'}" (click)="addSkillG(Skill)" class="approve col-sm-4 col-lg-4">
                     <button type="submit" class="pull-right" >
                         <span  class="glyphicon glyphicon-ok"></span>&nbsp;&nbsp;Approve
                     </button>  

@@ -2,18 +2,18 @@
                [Skills]="skills">
 </app-skill-add>
 <div *ngIf="skills" class="container">
-        <div *ngFor= "let Skill of skills"   class="col-lg-9 col-lg-offset-1  skillList"  (mouseover)="hoverSkill(Skill)" (mouseleave)="hoverSkill('')"> 
+        <div *ngFor= "let Skill of skills"   class="col-lg-9 col-sm-10 col-sm-offset-1 col-lg-offset-1  skillList"  (mouseover)="hoverSkill(Skill)" (mouseleave)="hoverSkill('')"> 
             <div class="eachSkill">
-                <div [class.active]="Skill === hoveredSkill"  class="col-lg-8 container skillName">
+                <div [class.active]="Skill === hoveredSkill"  class="col-lg-8 col-sm-6 container skillName">
                     <inline-editor class="" type="text" (onCancel)="updateFlag()" (onFocus) ="updateFlag()" [(ngModel)]="Skill.skillName"  (onSave)="updateSkill($event,Skill)" name="skillName" >
                     </inline-editor><span [hidden]="flag" class="glyphicon glyphicon-pencil"></span>
                 </div>
-                <div [ngStyle]="{'color' : Skill.status==='Accept'? 'green': 'grey'}" (click)="updateSkillStatus(Skill,'Accept')" class="approve col-lg-2 ">
+                <div [ngStyle]="{'color' : Skill.status==='Accept'? 'green': 'grey'}" (click)="updateSkillStatus(Skill,'Accept')" class="approve col-lg-2 col-sm-3 ">
                     <button type="submit" class="pull-right">
                         <span  class="glyphicon glyphicon-ok"></span>&nbsp;&nbsp;Accept
                     </button>  
                 </div>
-                <div [ngStyle]="{'color' : Skill.status==='Reject'? 'red': 'grey'}" (click)="updateSkillStatus(Skill,'Reject')" class="reject col-lg-2">
+                <div [ngStyle]="{'color' : Skill.status==='Reject'? 'red': 'grey'}" (click)="updateSkillStatus(Skill,'Reject')" class="reject col-lg-2 col-sm-3">
                     <button type="submit" class="pull-right">
                         <span  class="glyphicon glyphicon-remove"></span>&nbsp;&nbsp;Reject
                     </button>  
