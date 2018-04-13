@@ -8,9 +8,9 @@
         </div>
     </nav>
 	<div class="container">
-        <div (focus)="show=true" (blur)="show=false" class="col-sm-9 col-sm-offset-1 searchContainer">
+        <div  class="col-sm-9 col-sm-offset-1 searchContainer">
             <div id="imaginary_container"> 
-                <form (submit)="findSkill(query)"  class="input-group stylish-input-group">
+                <form (focus)="show=true" (blur)="show=false" (submit)="findSkill(query)"  class="input-group stylish-input-group">
                     <input type="text"  [(ngModel)]= "query" name="search" class="form-control"  placeholder="Search" >
                     <span class="input-group-addon">
                         <button type="submit">
