@@ -20,9 +20,12 @@ export class SkillSearchComponent implements OnInit {
     findSkill(query:any)
     {
         var skillSearch = this.skillSearch;
+        if(query){
         this.skillService.findSkill(query).subscribe(foundSkill=>{
             this.skillSearch = foundSkill;
-    });
+    });}else{
+            this.skillService.getSkillss().subscribe(skillSearch=> this.skillSearch = skillSearch);
+        }
     }
       ngOnInit() {
           this.skillService.getSkillss().subscribe(skillSearch=> this.skillSearch = skillSearch);
