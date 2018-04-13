@@ -39,17 +39,17 @@ deleteSkill(id:any)
 }
 
 
-addSkill()
-{
-    const newSkill ={
-        skillName: this.skillName,
-        status: this.status
-    };
-    this.skillService.addSkill(newSkill).subscribe(skill=>{
-        this.skills.push(skill);
-        this.skillService.getSkillss().subscribe(skills=> this.skills = skills);
-    });
-}
+//addSkill()
+//{
+//    const newSkill ={
+//        skillName: this.skillName,
+//        status: this.status
+//    };
+//    this.skillService.addSkill(newSkill).subscribe(skill=>{
+//        this.skills.push(skill);
+//        this.skillService.getSkillss().subscribe(skills=> this.skills = skills);
+//    });
+//}
   ngOnInit() {
       this.skillService.getSkillss().subscribe(skills=> this.skills = skills);
   }

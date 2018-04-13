@@ -21,7 +21,7 @@ toAddSkills: Skill[];
  
   constructor(private skillService: SkillService) { }
 private getIndexOfSkill = (skillId: String) => {
-    return this.skills.findIndex((skill) => {
+    return this.toAddSkills.findIndex((skill) => {
       return skill.id === skillId;
     });
     }
