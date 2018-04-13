@@ -57,7 +57,7 @@ router.get('/skill/:query',function(req, res){
 router.put('/skill/:id/:skillName',(req, res) => {
     Skill.update(
         {
-            status: req.params.skillName
+            skillName: req.params.skillName
         },
         {
             where:
