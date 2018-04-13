@@ -17,7 +17,7 @@ Skills: Skill[];
 
  hoveredSkill: Skill;
  flag: Boolean = false;
-toAddSkills: Skill[];
+ toAddSkills: Skill[]=[];
  
   constructor(private skillService: SkillService) { }
 private getIndexOfSkill = (skillId: String) => {
