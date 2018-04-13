@@ -18,7 +18,6 @@ import { SkillAddComponent } from './skill-add/skill-add.component';
     SkillListComponent,
     SkillSearchComponent,
     SkillDisplayComponent,
-    SkillComponent,
     SkillAddComponent
   ],
   imports: [
