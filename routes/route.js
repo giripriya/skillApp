@@ -44,7 +44,7 @@ router.delete('/skill/:id',function(req, res , next){
 
 //find skill
 router.get('/skill/:query',function(req, res){
-    Skill.findAll({where:{ "skillName": {[Sequelize.Op.like] : '%'+req.params.query+'%' }}}).then(skills => {res.json(skills)})
+    Skill.findAll({where:{ "skillName": {[Sequelize.Op.iLike] : '%'+req.params.query+'%' }}}).then(skills => {res.json(skills)})
         .catch(error => res.json({
             error: true,
             data: [],
