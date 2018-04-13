@@ -23,9 +23,11 @@ export class SkillDisplayComponent implements OnInit {
     }
     
     updateSkill(evt : Event, skill: Skill): void {
-    this.updateFlag(null);
+    this.updateFlag();
         console.log(evt);
+        console.log(skill);
     this.skillService.updateSkill(skill).then((updatedSkill: Skill) => {
+        console.log(updatedSkillL)
       this.updateSkillL(updatedSkill);
     });
     }
@@ -43,9 +45,8 @@ export class SkillDisplayComponent implements OnInit {
     {
       this.hoveredSkill = skill;
     }
-  updateFlag(evt : Event) 
+  updateFlag() 
     {
-        console.log(evt);
         this.flag = !this.flag;
     }
 
