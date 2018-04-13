@@ -64,12 +64,13 @@ router.put('/skill/:id/:skillName',(req, res) => {
          {
             id:req.params.id
          }, 
-         returning:true})
+         returning:true,
+        plain : true})
                  .then((err, result)=> {
            if(err) {
                console.log(err);
            } else {
-              res.json(result);
+              res.json(result[1].dataValues);
            }
        });
 }
