@@ -57,12 +57,11 @@ button{
 .glyphicon.glyphicon-pencil
 {
     visibility: hidden;
-    transition: .4s ease;
+    transition: all .4s ease;
 }
 div.skillName.active > span.glyphicon.glyphicon-pencil 
 {
     visibility: visible;
-    transition: .4s ease;
 }
 [hidden]
 {
