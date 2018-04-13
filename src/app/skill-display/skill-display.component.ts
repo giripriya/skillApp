@@ -22,12 +22,16 @@ export class SkillDisplayComponent implements OnInit {
     });
     }
     
+    updateSkillStatus(skill: Skill, stat: String):void{
+        skill.status=(skill.status===stat)?'':stat;
+        this.skillService.updateSkill(skill).then((updatedSkill: Skill) => {
+      this.updateSkillL(updatedSkill);
+    });
+    }
+    
     updateSkill(evt : Event, skill: Skill): void {
     this.updateFlag();
-        console.log(evt);
-        console.log(skill);
     this.skillService.updateSkill(skill).then((updatedSkill: Skill) => {
-        console.log(updatedSkill);
       this.updateSkillL(updatedSkill);
     });
     }

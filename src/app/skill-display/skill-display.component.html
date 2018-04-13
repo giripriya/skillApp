@@ -9,12 +9,12 @@
                     <inline-editor class="col-sm-9" type="text" (onCancel)="updateFlag()" (onFocus) ="updateFlag()" [(ngModel)]="Skill.skillName"  (onSave)="updateSkill($event,Skill)" name="skillName" >
                     </inline-editor><span [hidden]="flag" class="col-sm-3 glyphicon glyphicon-pencil"></span>
                 </div>
-                <div [ngStyle]="{'color' : Skill.status==='accept'? 'green': 'grey'}" class="approve col-sm-3 col-sm-offset-1 ">
+                <div [ngStyle]="{'color' : Skill.status==='accept'? 'green': 'grey'}" (click)="updateSkillStatus(Skill,'Accept')" class="approve col-sm-3 col-sm-offset-1 ">
                     <button type="submit">
                         <span  class="glyphicon glyphicon-ok"></span>&nbsp;&nbsp;{{Skill.status}}
                     </button>  
                 </div>
-                <div [ngStyle]="{'color' : Skill.status==='reject'? 'red': 'grey'}" class="reject col-sm-3 col-sm-offset-1">
+                <div [ngStyle]="{'color' : Skill.status==='reject'? 'red': 'grey'}" (click)="updateSkillStatus(Skill,'Reject')" class="reject col-sm-3 col-sm-offset-1">
                     <button type="submit">
                         <span  class="glyphicon glyphicon-remove"></span>&nbsp;&nbsp;{{Skill.status}}
                     </button>  
