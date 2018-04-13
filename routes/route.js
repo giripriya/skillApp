@@ -72,25 +72,21 @@ router.put('/skill/:id/:skillName',(req, res) => {
 }
 );
 
-
 // Update a skill identified by the Id in the request
-router.put('/skillStatus/:id/:skillName',(req, res) => {
+router.put('/skillStatus/:id/:skillStatus',(req, res) => {
     Skill.update(
         {
-            status: req.params.skillName
+            status: req.params.skillStatus
         },
         {
             where:
          {
             id:req.params.id
          }, 
-         returning:true})
-                 .then((err, result)=> {
-           if(err) {
-               console.log(err);
-           } else {
-              res.json(result);
-           }
+         returning:true,
+        plain : true})
+                 .then((result)=> {
+              res.json(result[1].dataValues);
        });
 }
 );
