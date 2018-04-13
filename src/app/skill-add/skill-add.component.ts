@@ -29,7 +29,7 @@ addSkill()
  {
      var toAddSkills = this.toAddSkills;
      var skill : Skill={
-        id: toAddSkills.length.toString(),
+        id: toAddSkills.length.toString()|| "0",
         skillName : "Skill Name",
         status : "notAdded"
      };
