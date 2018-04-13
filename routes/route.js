@@ -45,13 +45,12 @@ router.delete('/skill/:id',function(req, res , next){
 //find skill
 router.get('/skill/:query',function(req, res){
     const regex = new RegExp(escapeRegex(req.params.query), 'gi');
-    Skill.findAll({ "skillName": regex }).then((err, skill)=> {
-           if(err) {
-               console.log(err);
-           } else {
-              res.json(skill);
-           }
-       });
+    Skill.findAll({where:{ "skillName": regex }}).then(skills => res.json(skills))
+        .catch(error => res.json({
+            error: true,
+            data: [],
+            error: error
+        }));
 });
 // Update a skill identified by the Id in the request
 router.put('/skill/:id/:skillName',(req, res) => {
