@@ -19,12 +19,8 @@ router.post('/skill',function(req, res , next){
         status: req.body.status
     });
     newSkill.save()
-        .then((err, skill) =>{
-        if(err){
-            res.json({msg:"failed to add Skill"+ err});
-        }else{
+        .then(( skill) =>{
             res.json({msg: "added"});
-        }
     })
 });
 
