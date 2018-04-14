@@ -22,7 +22,7 @@ highlight: Skill;
     {  
             if(this.highlight!=undefined)
             {
-            return Skill.skillName ===(this.highlight.hasOwnProperty('skillName')) ? this.highlight.skillName : false;
+            return Skill.skillName === this.highlight.hasOwnProperty('skillName') ? this.highlight.skillName : "";
             }
             else{
             return false;
