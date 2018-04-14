@@ -14,25 +14,23 @@ export class SkillDisplayComponent implements OnInit {
   skills: Skill[];
   hoveredSkill: Skill;
   flag: Boolean = false;
-  permission : Boolean = false;
+/*  permission : Boolean = false;
 
    
     givePerm(Skill: Skill)
     {  
-            if(this.highlight!=undefined)
+        if(Skill!=undefined)
             {
-                if(this.highlight.hasOwnProperty('skillName'))
+                if(Skill.hasOwnProperty('skillName'))
                     {
-                        this.permission = Skill.skillName == this.highlight.skillName;
+                        for(skill in this.skills)   
+                    {
+        
+                        this.permission = Skill.skillName == chkSkill.skillName;
                     }
-                else{
-                    this.permission = false;
-                }
-            }
-            else{
-            this.permission = false;
             }
     }
+    }*/
 
     private getIndexOfSkill = (skillId: String) => {
     return this.skills.findIndex((skill) => {

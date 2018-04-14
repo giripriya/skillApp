@@ -1,4 +1,4 @@
-import { Component, OnInit , Input} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {SkillService} from '../skill.service';
 import {Skill} from '../skill';
 import {Http, Headers} from '@angular/http';
@@ -15,12 +15,12 @@ export class SkillSearchComponent implements OnInit {
     skillName: String;
     status: string;
     show: Boolean;
-    highlight: Skill = {
+    /*highlight: Skill = {
         skillName: "",
         status:""
-    };
-    @Input()
-    highlightHandler: Function;
+    };*/
+    /*@Input()
+    highlightHandler: Function;*/
     
   constructor(private skillService: SkillService) { }
 
