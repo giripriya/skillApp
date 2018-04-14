@@ -17,6 +17,17 @@ export class SkillDisplayComponent implements OnInit {
 
 @Input()
 highlight: Skill;
+    
+    givePerm(Skill: Skill)
+    {  
+            if(highlight!=undefined)
+            {
+            return Skill.skillName ===(highlight.hasOwnProperty('skillName')) ? highlight.skillName : false;
+            }
+            else{
+            return false;
+            }
+    }
 
     private getIndexOfSkill = (skillId: String) => {
     return this.skills.findIndex((skill) => {
