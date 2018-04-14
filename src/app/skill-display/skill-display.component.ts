@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {SkillService} from '../skill.service';
 import {Skill} from '../skill';
 import { NgStyle } from '@angular/common';
@@ -14,6 +14,9 @@ export class SkillDisplayComponent implements OnInit {
   skills: Skill[];
   hoveredSkill: Skill;
   flag: Boolean = false;
+
+@Input()
+highlight: Skill;
 
     private getIndexOfSkill = (skillId: String) => {
     return this.skills.findIndex((skill) => {

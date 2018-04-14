@@ -15,6 +15,7 @@ export class SkillSearchComponent implements OnInit {
     skillName: String;
     status: string;
     show: Boolean;
+    highlight: Skill;
   constructor(private skillService: SkillService) { }
 
     hideDrop()

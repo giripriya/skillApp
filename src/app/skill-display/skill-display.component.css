@@ -35,7 +35,7 @@ button{
     background-color: white;
 }
 .approve>button, .reject>button{
-    background-color: white !important;
+    background-color: transparent!important;
     border: none;
 }
 .skillList{
@@ -66,4 +66,8 @@ div.skillName.active > span.glyphicon.glyphicon-pencil
 [hidden]
 {
     display: none;
+}
+.highlight
+{
+    background-color: aquamarine !important;
 }
