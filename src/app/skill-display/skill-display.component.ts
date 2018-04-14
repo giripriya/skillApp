@@ -20,9 +20,9 @@ highlight: Skill;
     
     givePerm(Skill: Skill)
     {  
-            if(highlight!=undefined)
+            if(this.highlight!=undefined)
             {
-            return Skill.skillName ===(highlight.hasOwnProperty('skillName')) ? highlight.skillName : false;
+            return Skill.skillName ===(this.highlight.hasOwnProperty('skillName')) ? this.highlight.skillName : false;
             }
             else{
             return false;
