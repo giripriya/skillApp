@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , Input} from '@angular/core';
 import {SkillService} from '../skill.service';
 import {Skill} from '../skill';
 import {Http, Headers} from '@angular/http';
@@ -19,6 +19,9 @@ export class SkillSearchComponent implements OnInit {
         skillName: "",
         status:""
     };
+    @Input()
+    highlightHandler: Function;
+    
   constructor(private skillService: SkillService) { }
 
     hideDrop()
